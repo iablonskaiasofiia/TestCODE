@@ -18,19 +18,19 @@ int main() {
     cout << "Input n >= 3, n = ";
     cin >> n;
 
-    for (x=a; x<=b; x=x+step){
+    for (x = a; x <= b; x += step){
         y = 1;
         if (x < 0) {
             for (int i = 1; i <= n-2; i++) {
-                y=y*(i+x);
+                y *= i + x;
             }
         } else {
-            for (int j=1; j <= n; j++) {
+            for (int j = 1; j <= n; j++) {
                 z = 0;
-                for (int i=1; i < n+3; i++) {
-                    z=z+(i+1.0/(4*j*j));   
+                for (int i = 1; i < n+3; i++) {
+                    z += i + 1.0/(4*j*j);   
                 }
-                y=y*z;
+                y *= z;
             }
         }
         cout << "x= " << x <<"; " << "y= " << y << endl;
